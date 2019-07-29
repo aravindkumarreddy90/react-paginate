@@ -17,6 +17,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var PageView = function PageView(props) {
   var pageClassName = props.pageClassName;
   var pageLinkClassName = props.pageLinkClassName;
+  var pageLinkStyle = {};
 
   var onClick = props.onClick;
   var href = props.href;
@@ -41,6 +42,7 @@ var PageView = function PageView(props) {
     } else {
       pageLinkClassName = props.activeLinkClassName;
     }
+    pageLinkStyle = props.activeStyle;
   }
 
   return _react2.default.createElement(
@@ -52,6 +54,7 @@ var PageView = function PageView(props) {
         onClick: onClick,
         role: 'button',
         className: pageLinkClassName,
+        style: pageLinkStyle,
         href: href,
         tabIndex: '0',
         'aria-label': ariaLabel,
@@ -68,6 +71,7 @@ PageView.propTypes = {
   selected: _propTypes2.default.bool.isRequired,
   pageClassName: _propTypes2.default.string,
   pageLinkClassName: _propTypes2.default.string,
+  activeStyle: _propTypes2.default.object,
   activeClassName: _propTypes2.default.string,
   activeLinkClassName: _propTypes2.default.string,
   extraAriaContext: _propTypes2.default.string,

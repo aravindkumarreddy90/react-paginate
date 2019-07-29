@@ -74,6 +74,8 @@ export class App extends Component {
   };
 
   render() {
+    // We can pass the custom bgColor as inline
+    const bg = {};
     return (
       <div className="commentBox">
         <CommentList data={this.state.data} />
@@ -88,6 +90,7 @@ export class App extends Component {
           onPageChange={this.handlePageClick}
           containerClassName={'pagination'}
           subContainerClassName={'pages pagination'}
+          activeStyle={bg}
           activeClassName={'active'}
         />
       </div>
